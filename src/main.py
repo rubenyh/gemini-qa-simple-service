@@ -14,5 +14,5 @@ async def health():
 
 @app.post("/ask", response_model=AnswerResponse)
 async def ask(request: QuestionRequest):
-    answer = await orchestrato.answer_question(request.question)
+    answer = await orchestrator.answer_question(request.question)
     return AnswerResponse(answer=answer)
